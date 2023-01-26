@@ -121,6 +121,20 @@ class User(models.Model):
     first_name = models.CharField(max_length=30)
 ```
 
+### Fields
+
+* Each field in a model should be a Field class
+* Django maps each field to a column type, such as *INT, VARCHAR,* or *DATE*
+* Each field has customization parameters such as *null, blank, default,* or *primary_key*
+
+```python
+class User(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    dob = models.DateField()
+```
+
+
 
 
 
