@@ -274,3 +274,29 @@ Congratulations! You have completed this lesson. At this point in the course, yo
 ​          DELETE FROM [TableName] <Where [Condition]>
 
 - The WHERE clause specifies the rows in a table that are to be acted on by a SQL statement such as SELECT, DELETE, or UPDATE.
+
+## Using SQL in applications
+
+Object-oriented paradigm
+
+executing SQL in Python
+
+```python
+# Connection to a database
+connection = sqlite3.connect("course.db")
+cursor =  connection.cursor()
+# Insert a learner record
+insert_statement = "INSERT INTO data_learner (first_name, last_name, dob, occupation) VALUES ("John", "Doe", "1962-01-01", "Developer"); "
+cursor.execute(insert_statement)
+# Execute SELECT statement via cursor
+cursor.execute("SELECT * FROM data_learner")
+# Get first row in table course
+learner =  cursor.fetchone()
+```
+
+expected out put would be 
+
+```
+('John', 'Doe', '1962-01-01', 'Developer')
+```
+
