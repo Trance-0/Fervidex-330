@@ -1,5 +1,5 @@
-
-# Using SQL in applications
+# FSSDPC Developing Applications with SQL Databases Django Week 2
+> Using SQL in applications
 
 Object-oriented paradigm
 
