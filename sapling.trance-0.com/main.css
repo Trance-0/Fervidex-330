@@ -1,0 +1,17 @@
+/* to cite this css file, you need <link href="main.css" rel="stylesheet" type="text/css"/> */
+/* this refereing to style for body in html */
+body{
+    /* This is what comment looks like in css, kinda like java actually */
+    /* color of miku~ */
+    background: rgb(113, 148, 235);
+    /* I love it, visual studio code really makes my life easier */
+    font-family: 'Times New Roman', Times, serif;
+}
+/* this is style set for link start with <a ..>*/
+a {
+    color:rgb(113, 148, 235)
+}
+/* this is style set for paragraph */
+p {
+    background: rgb(156, 205, 223);
+}

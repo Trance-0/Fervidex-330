@@ -1,0 +1,57 @@
+/* There are numerous properties that can help you design the web pages */
+/* First, start with the base case */
+/* Inline css have greater priority than internal css and external css */
+Body{
+    background-image: linear-gradient(40deg,rgba(135,197,237,0.5) 0%,rgba(241,224,205,0.5) 50%,rgba(30,182,194,0.5) 100%);
+    /* Here is the backgroud color of the section */
+    color: #5d71aa;
+    /* Here is the font color */
+    margin: 3%;
+    /* In default, margin is more commenly used */
+    padding: 0px;
+    text-align: left;
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* this is style set for link start with <a ..>*/
+a {
+    color:#48b4a6;
+}
+/* you can also add hover effects to the links */
+a:hover{
+    color:#7bdcb5;
+}
+/* this is style set for paragraph */
+div {
+   background-color: #FFFFFF;
+   padding: 5%;
+}
+.menu{
+    padding: 0%;
+}
+/* this is the styles for heading */
+h1{
+    color: #4e97b9;
+    font-size: xx-large;
+}
+h2{
+    color: #4e97b9;
+    font-size: x-large;
+}
+h3{
+    color: #4e97b9;
+    font-size:large;
+}
+h4{
+    color: #4e97b9;
+    font-size: medium;
+}
+h5{
+    color: #4e97b9;
+    font-size:small;
+}
+h6{
+    color: #4e97b9;
+    font-size: x-small;
+}

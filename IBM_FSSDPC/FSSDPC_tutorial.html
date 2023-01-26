@@ -1,0 +1,482 @@
+<!-- This document is the note I get from FSSDPC Introduction to web development -->
+<!-- Documents having test/html media type are parsed using HTML rules -->
+<!-- Documents transimitted with an HTML content type is processed as an HTML document by web browsers -->
+<!-- The html file is opened usuing DOM tree accessor, which open your file like tree with heriachical structure -->
+<!DOCTYPE html>
+<!-- The DOCTYPE is declaration tag that represents the document type -->
+<!-- The html value represents the version of html(usually html5) rather than real data type -->
+<!-- PS. there is also another type called xhtml, you can think it as a combination of xml and html with extra tags -->
+<!-- In XHTML the sytax rules are more strict(all tags in lowercase and sytax error will crash the entire docuemnt) -->
+<html>
+<!-- The HTML tag is the root element of the tree and contains all html element except the doctype tag -->
+
+<head>
+
+    <!-- Head element is where you place the following tags -->
+    <!-- These informations helps the HTML easily identified by serach engines -->
+    <title>Sample Page</title>
+    <script src="FSSDPC_tutorial.js" type='text/javascript'>
+
+    </script>
+    <!-- The scripting is enabled in a brower when the browser supports scripting and the user get scripting enabled and the content does not have sandboxd browsing content flag set -->
+    <!-- you can sandbox the item type with the flowing meta -->
+    <!-- <meta http-equiv='Content-Type' content='text/html-sandboxed'> -->
+    <!-- or -->
+    <!-- <iframe sandbox>
+        </iframe> -->
+    <!-- The second method is more accessible especially for embeded objects -->
+    <style>
+        /* This is the place you put css style sheet, but the line ususally repalced by link to css file for better reading experience */
+    </style>
+    <link href="FSSDPC_tutorial.css" rel="stylesheet" type="text/css">
+    <meta charset='utf=8'>
+    <!-- meta informations -->
+    <base>
+    <!-- browser support informations -->
+
+</head>
+
+<body>
+    <nav>
+        <div class='menu'>
+            <a href='#'>Home</a>|
+            <a href='#week_1'>week 1</a>|
+            <a href='#week_2'>week 2</a>|
+            <a href='#week_3'>week 3</a>|
+            <a href='#week_4'>week 4</a>|
+            <a href='#week_5'>week 5</a>|
+            <a href='#footer'>end</a>
+        </div>
+    </nav>
+    <!-- Here is the navigational link in <nav> tag -->
+    <div class='contianer'>
+        <p>
+            Example paragraph.
+        </p>
+        <audio controls autoplay>
+            <!-- To start audio autoplay and muted attribute -->
+            <!-- Note: Chromium browsers do not allow autoplay in most cases. However, muted autoplay is always allowed. -->
+            <source src="audios/はるまきごはん - November (Piano Instrumental by chio).mp3" type="audio/mpeg">
+            <!-- You can add more source here but it seems that only ogg, mp3 and wav is supported -->
+            Your browser does not support the audio formats provided.
+        </audio>
+        <h1>Introduction to Web development notes</h1>
+        <!-- heading range from 1 to 6 <h1> to <h6> -->
+        <h2 id='week_1'>Week 1</h2>
+        <p>
+            In this module, you learned that:
+        <ul>
+            <li>Front-end developers work on the parts of the website or app that the user sees and interact with.
+            </li>
+            <li>
+                Back-end developers work on the logic and functionality that keeps the website or app running and
+                responding
+                to users’ inputs.
+            </li>
+            <li>
+                Full-stack developers have both sets of skills.
+            </li>
+            <li>
+                Front-end developers and back-end developers work closely together.
+            </li>
+            <li>
+                Frameworks and libraries extend the functionality of coding languages such as JavaScript and Python.
+            </li>
+            <li>
+                Common languages for front-end development include: HTML, CSS, and JavaScript.
+            </li>
+            <li>
+                Common languages and frameworks for back-end development include: Python, Django, and Flask.
+            </li>
+            <li>
+                Version control systems keep track of changes and resolve conflicts between them.
+            </li>
+            <li>
+                CI/CD (Continuous Integration with Continuous Delivery/Deployment) is a best practice developers use to
+                deliver frequent changes reliably.
+            </li>
+        </ul>
+        </p>
+        <h2 id='week_2'>Week 2</h2>
+        <h3 id='section'>HTML scripting</h3>
+        <p>
+            <a>
+                This is the paragraph for HTML scripting example.
+            </a>
+            <input type='text' id='textField1'>
+            <!-- The id attribute is helping the script to search for the value given -->
+            <input type='button' onClick='textChecker()' value='Submit'>
+            <!-- This is the button to wake up the funtion, the attribute onClick is the funtion to call and value is the text on button -->
+        </p>
+        <h3>HTML input type support</h3>
+        <p>
+            This is the paragraph to introcude the browser support for ccs3 and html5<br>
+            <!-- the tag <br> is used to break the line. -->
+            Goggle Chrome supports most features, but other browsers or the older versions of browsers may not support
+            the
+            newest features.<br>
+            The <a href='https://www.caniuse.com' target='_blank'> caniuse.com</a> provides support tables for HTML5 and
+            CSS3, if you are
+            interested.
+            <!-- <a href='some value'></a> is how you insert hyperlinks, target='_blank' means open the page in a new tab -->
+        </p>
+        <p>
+            Each brower would have different implementations for web functions, for example:
+        </p>
+        <input type='date'>
+        <p>
+            If you see a text field. it means the data type is not supported by the
+            browser and you may need to created the input function by yourself or using other ways to input the value
+            you
+            want.<br>
+            This would interfere your validation process and the input may varies.<br>
+            You can also test whether the data type is supported using your codes.
+            functions are in the source file.
+        </p>
+        <p id='thisform'>
+            <input type='button' onClick='testElementSuport()' value='test element support for date'>
+        </p>
+        <h3>Other tags for html</h3>
+        <p>
+            The &lt;a href='#top'&gt;
+            <!-- &lt;&gt; The function to represent special characters may varies. (I see IBM use text writer to do the whole class of shits.) you can use &lt; to represent < tag -->
+            tag can be used to bring you to other pages or bring you to
+            <a href='#top'>the top of the page</a> or <a href='#section'>other sections.</a> You may resize the window
+            to
+            see how it works.
+        </p>
+        <p>
+            The &lt;ol&gt; tag can be used to create an ordered list while the &lt;ul&gt; can be used to create
+            unordered
+            list.
+            <!-- Unordered List -->
+        <ul>
+            <li>This is a bullet point </li>
+            <li>The items in this list have no particular order </li>
+            <li>Each item will appear as a bullet, rather than a number </li>
+        </ul>
+        <!-- Ordered List -->
+        <ol>
+            <li>This is an ordered list </li>
+            <li>The items in this list have a particular order </li>
+            <li>Each item will be numbered, starting from 1 </li>
+            <li>This is the fourth point in the list </li>
+        </ol>
+        </p>
+        <p>
+            The &lt;table&gt; tag can also help you to create a table. but you may need additional css to make the table
+            looks better.
+        <table>
+            <tr>
+                <th>Heading 1</th>
+                <th>Heading 2</th>
+                <th>Heading 3</th>
+            </tr>
+            <tr>
+                <td>H1 - Data Item 1</td>
+                <td>H2 - Data Item 1</td>
+                <td>H3 - Data Item 1</td>
+            </tr>
+            <tr>
+                <td>H1 - Data Item 2</td>
+                <td>H2 - Data Item 2</td>
+                <td>H3 - Data Item 2</td>
+            </tr>
+            <tr>
+                <td>H1 - Data Item 3</td>
+                <td>H2 - Data Item 3</td>
+                <td>H3 - Data Item 3</td>
+            </tr>
+        </table>
+        </p>
+        <p>
+            The &lt;img&gt; tag is used to insert image in html files.<br>
+            The &lt;img src='images/Screenshot 2022-12-25 131933.png' alt='defalt ccs for table in chrome' width='456'
+            height='128'&gt; tag can be used to create image like below
+            <img src='images/Screenshot 2022-12-25 131933.png' alt='defalt ccs for table in chrome' width='456'
+                height='128'>
+        </p>
+        <h2 id='week_3'>Week 3</h2>
+        <h3>HTML5 specific tagss and structual elements</h3>
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&lt;article&gt;</td>
+                <td>content from an external source - news article, blog, or forum. It is a structural element which
+                    usually
+                    combined with header, section, and footers.</td>
+            </tr>
+            <tr>
+                <td>&lt;aside&gt;</td>
+                <td>content aside from th epage content - it is a example of gouping element, along with &lt;figure&gt;
+                    and
+                    &lt;figcaption&gt; </td>
+            </tr>
+            <tr>
+                <td>&lt;audio&gt;</td>
+                <td>used to embed sound content. If a browser does not support the audio formats provided, the browser
+                    will
+                    instead display any text within the &lt;audio&gt; element. It is an emample of embeding element
+                    along
+                    with &lt;source&gt;, which is used to track audio source, &lt;canvas&gt; which is used to place
+                    graphical source, and &lt;track&gt; which is used to add subscript for videos. </td>
+            </tr>
+            <tr>
+                <td>&lt;canvas&gt;</td>
+                <td>used to draw grapics</td>
+            </tr>
+            <tr>
+                <td>&lt;datalist&gt;</td>
+                <td>provide a list of predefinded options for input controls</td>
+            </tr>
+            <tr>
+                <td>&lt;details&gt;</td>
+                <td>used to show hidden contents</td>
+            </tr>
+            <tr>
+                <td>&lt;embed&gt;</td>
+                <td>Embeds an external application or interactive content into page</td>
+            </tr>
+            <tr>
+                <td>&lt;figcaption&gt;</td>
+                <td>caption of the figure tag</td>
+            </tr>
+            <tr>
+                <td>&lt;footer&gt;</td>
+                <td>the footer of the document section</td>
+            </tr>
+            <tr>
+                <td>&lt;header&gt;</td>
+                <td>sepcified a group of introductory or navigational elements</td>
+            </tr>
+            <tr>
+                <td>&lt;keygen&gt;</td>
+                <td>speciefies a key-pair generator field used in forms</td>
+            </tr>
+            <tr>
+                <td>&lt;mark&gt;</td>
+                <td>represents highlighted text</td>
+            </tr>
+            <tr>
+                <td>&lt;meter&gt;</td>
+                <td>used for measurements with minimum and maximum values</td>
+            </tr>
+            <tr>
+                <td>&lt;nav&gt;</td>
+                <td>speciefied navigation for a document</td>
+            </tr>
+            <tr>
+                <td>&lt;output&gt;</td>
+                <td>represents the resultf of a calculation</td>
+            </tr>
+            <tr>
+                <td>&lt;progress&gt;</td>
+                <td>specifies the state of work in progress</td>
+            </tr>
+            <tr>
+                <td>&lt;section&gt;</td>
+                <td>defined sections in a document of article,usually goes with header</td>
+            </tr>
+            <tr>
+                <td>&lt;source&gt;</td>
+                <td>used to specify multiple media resoruces for media elemetns</td>
+            </tr>
+            <tr>
+                <td>&lt;summary&gt;</td>
+                <td>definds a visible heading for the details tag</td>
+            </tr>
+            <tr>
+                <td>&lt;time&gt;</td>
+                <td>used ot specify the date or time in a document</td>
+            </tr>
+            <tr>
+                <td>&lt;video&gt;</td>
+                <td>specifies video, such as a movie clip or video stream</td>
+            </tr>
+        </table>
+        <p>
+            The &lt;aside&gt; tag is is used to provide additional informaiton that is related to the main discussion,
+            used
+            for cautions, notes or to wrap navigational links.
+        </p>
+        <p>
+            The html5 also use &lt;div&gt; as a structural element, it does not have innate semantic meaning besides the
+            logcal goruping of the content in page.
+        </p>
+        <p>
+            The &lt;figure&gt; tag is a self-contained element referred to from the main content, it is used to embed
+            grapics, photographs, or code segments.
+        </p>
+        <h3>HTML5 input elements</h3>
+        <table>
+            <tr>
+                <th>Input type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&lt;input type='color'&gt;</td>
+                <td>to draw a color window to allow users to select color, if not support, you can still get a text
+                    field to
+                    input hex value of color.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='date'&gt;</td>
+                <td>to get year month day with no time zone.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='datetime-local'&gt;</td>
+                <td>to get year month day with hour minute AM/PM with time zone.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='email'&gt;</td>
+                <td>to get email and accepts only a valid email format.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='number'&gt;</td>
+                <td>to get number with specified min and max with step size.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='range'&gt;</td>
+                <td>to get number with in specific range, additional code required to get the value in it.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='search'&gt;</td>
+                <td>a fancy input field with search button. Some WebKit-based browsers would have recommented words for
+                    recent search.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='tel'&gt;</td>
+                <td>to get telephone nubmers, but you may neet to set the valid format by yourself like this &lt;input
+                    type="tel" pattern=[0-9]{3}-[0-9]{3}-[0-9]{4}&gt; to trigger alerts for invalid inputs.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='URL'&gt;</td>
+                <td>to get valid url with validation.</td>
+            </tr>
+            <tr>
+                <td>&lt;input type='list'&gt;</td>
+                <td>to get input in given list with auto-complete, you may use it with &lt;datalist&gt; to make it
+                    works.
+                </td>
+            </tr>
+        </table>
+        <p>The placeholder attribute provides an example of the input text format in a lighter shade of text, but the
+            value
+            will not be sent.</p>
+        <p>
+            The required attribute makes the input must have value when submitted.
+        </p>
+        <p>
+            The &lt;fieldset&gt; and &lt;legend&gt; tag can be created in form tag to make the form looks better. eg.
+        <form>
+            <fieldset name="personal_details">
+                <legend>Personal Details</legend>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone"><br>
+            </fieldset>
+            <br>
+            <fieldset name="professional_details">
+                <legend>Professional Details</legend>
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation"><br>
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company"><br>
+                <label for="start">Start Date:</label>
+                <input type="date" id="start" name="start"><br>
+                <label for="end">End Date:</label>
+                <input type="date" id="end" name="end"><br>
+            </fieldset>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        </p>
+        <p>
+            The remaining part of the tutorial goes to css, you can check it in css file.
+        </p>
+        <p>
+            In this module, you learned that:
+        <ul>
+            <li>CSS creates a uniform look throughout each element of each page of the website.
+            </li>
+            <li>
+                CSS is usually coded in external style sheets and creates base styles for a website.
+            </li>
+            <li>
+                CSS frameworks assists in implementing UI elements and creating dynamic web pages.
+            </li>
+            <li>
+                CSS has two types of frameworks:
+            </li>
+            <li>
+                Utility-first frameworks, which provide utility classes to help in building one's own styles and
+                layouts.
+            </li>
+            <li>
+                Component frameworks, which provide a wide selection of pre-styled components and templates that can be
+                implemented onto a website.
+            </li>
+            <li>
+                Plain (Vanilla) CSS lets developers write the styles and layouts of a website.
+            </li>
+            <li>
+                HTML5 elements provide structure and function to websites.
+            </li>
+        </ul>
+        </p>
+        <h2 id='week_4'>Week 4</h2>
+        <p> 
+            Detailed code for this module is in javascript file
+            <br>In this module, you learned that:
+        <ul>
+            <li>
+                JavaScript is a scripting language that enables developers to add dynamic content to webpages.
+            </li>
+            <li>
+                JavaScript variables are declared using the var keyword and take their type from the value assigned.
+            </li>
+            <li>
+                Program execution is controlled by statements like If…Then…Else, Switch, For loops, and While loops.
+            </li>
+            <li>
+                JavaScript uses blocks of code, called functions, that can be called from anywhere in the script.
+            </li>
+            <li>
+                New methods and properties can be added to an object by modifying the prototype for that object.
+            </li>
+            <li>
+                Prototypes allow you to define properties and methods for all instances of a specific object.
+            </li>
+            <li>
+                Client-side scripts are programs that accompany HTML documents and are used by developers to incorporate
+                more interactive elements.
+            </li>
+            <li>
+                The script tag can incorporate a script within an HTML document or call a script from an external file.
+            </li>
+            <li>
+                The Document Object Model (DOM) is the programming interface between HTML or XHTML and JavaScript.
+            </li>
+            <li>
+                Developers can access HTML DOM elements from JavaScript scripts using the correct DOM notation.
+            </li>
+            <li>
+                APIs are often used to access HTML DOM elements in web pages.
+            </li>
+        </ul>
+        </p>
+    </div>
+</body>
+<footer>
+
+</footer>
+
+</html>
