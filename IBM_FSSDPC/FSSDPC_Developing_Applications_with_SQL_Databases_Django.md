@@ -383,4 +383,21 @@ Cons
 * Hides implementation details; difficult to debug
 * May reduce performance
 
+## Django Model
+
+Key facts:
+
+* Each Django model (class) maps to a database table
+* Each class object represents a database table row
+* Each field represents a database table column
+* Schema and tables are automatically generated once model classes are defined
+
+```python
+class User(models.Model):
+    first_name = models.CharField(max_length=30)
+```
+
+
+
+
 
