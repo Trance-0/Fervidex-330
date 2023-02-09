@@ -134,8 +134,18 @@ class User(models.Model):
     dob = models.DateField()
 ```
 
+in Django
 
+```sql
+CREATE TABLE data_user
+("id" serial NOT NULL PRIMARY KEY, 
+ "first_name" varchar(30) NOT NULL,
+ "last_name" varchar(30) NOT NULL,
+ "dob" data NOT NULL
+);
+```
 
+### Relationship
 
 
 
